@@ -3,34 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="James Peter Ugochukwu — IT Specialist, Software Developer. Welcome to jupopie.space.">
-  <title>jupopie.space | James Peter Ugochukwu</title>
+  <meta name="description" content="Welcome to jupopie.space">
+  <title>jupopie.space</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0b0f14;
-      --bg-card: #151c26;
-      --border: #1e2a3a;
       --text: #e8edf4;
       --text-muted: #8b9cb3;
       --accent: #2dd4bf;
-      --accent-dim: rgba(45, 212, 191, 0.12);
-      --accent-hover: #5eead4;
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      --border: #1e2a3a;
+      --bg-card: #151c26;
     }
 
     [data-theme="light"] {
       --bg: #f4f7fb;
-      --bg-card: #ffffff;
-      --border: #dde4ee;
       --text: #1a2332;
       --text-muted: #5a6b82;
       --accent: #0d9488;
-      --accent-dim: rgba(13, 148, 136, 0.1);
-      --accent-hover: #0f766e;
-      --shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+      --border: #dde4ee;
+      --bg-card: #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -40,32 +34,17 @@
       margin: 0;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
       transition: background 0.25s, color 0.25s;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { color: var(--accent-hover); }
-
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      color: var(--text);
-    }
-
     .theme-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
       display: inline-flex;
       padding: 0.25rem;
       background: var(--bg-card);
@@ -93,170 +72,25 @@
 
     [data-theme="light"] .theme-switch-option.active { color: #ffffff; }
 
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-    }
-
-    .hero {
-      max-width: 640px;
-      text-align: center;
-    }
-
-    .domain {
-      display: inline-block;
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      background: var(--accent-dim);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      margin-bottom: 1.5rem;
-    }
-
     h1 {
-      font-size: clamp(2rem, 5vw, 2.75rem);
-      font-weight: 700;
-      margin: 0 0 0.75rem;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin: 0 0 2.5rem;
-    }
-
-    .cards {
-      display: grid;
-      gap: 1rem;
-      text-align: left;
-      margin-bottom: 2rem;
-    }
-
-    .card {
-      display: block;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      color: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-
-    .card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow);
-      transform: translateY(-2px);
-      color: inherit;
-    }
-
-    .card-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.35rem;
-    }
-
-    .card h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0 0 0.35rem;
-      color: var(--text);
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
       margin: 0;
-    }
-
-    .card-arrow {
-      float: right;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .social {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .social a {
-      padding: 0.6rem 1.1rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-
-    .social a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    footer {
-      text-align: center;
       padding: 1.5rem;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      border-top: 1px solid var(--border);
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <span class="logo">jupopie.space</span>
-    <div class="theme-switch" role="group" aria-label="Choose color theme">
-      <button type="button" class="theme-switch-option" id="themeLight" aria-pressed="false">☀ Light</button>
-      <button type="button" class="theme-switch-option" id="themeDark" aria-pressed="true">☾ Dark</button>
-    </div>
+  <div class="theme-switch" role="group" aria-label="Choose color theme">
+    <button type="button" class="theme-switch-option" id="themeLight" aria-pressed="false">☀ Light</button>
+    <button type="button" class="theme-switch-option" id="themeDark" aria-pressed="true">☾ Dark</button>
   </div>
 
-  <main>
-    <div class="hero">
-      <span class="domain">jupopie.space</span>
-      <h1>James Peter Ugochukwu</h1>
-      <p class="subtitle">IT Specialist · Software Developer · Systems & Technical Support</p>
-
-      <div class="cards">
-        <a class="card" href="/resume">
-          <span class="card-arrow">→</span>
-          <div class="card-label">Resume</div>
-          <h2>View My CV</h2>
-          <p>Full professional resume — experience, skills, education, and projects.</p>
-        </a>
-        <a class="card" href="https://mediaone.ng" target="_blank" rel="noopener">
-          <span class="card-arrow">→</span>
-          <div class="card-label">Live Project</div>
-          <h2>MediaOne.ng</h2>
-          <p>Nigerian news and media platform — headlines, trending stories, and live coverage.</p>
-        </a>
-      </div>
-
-      <div class="social">
-        <a href="mailto:peterugochukwujames@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/peter-james-957910197" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/raiderpet" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 James Peter Ugochukwu · Nigeria</p>
-  </footer>
+  <h1>Welcome to Jupopie Space</h1>
 
   <script>
     const themeLight = document.getElementById('themeLight');

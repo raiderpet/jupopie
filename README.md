@@ -1,16 +1,21 @@
-# James Peter Ugochukwu — Portfolio
+# jupopie.space
 
-Modern portfolio site for **James Peter Ugochukwu**, IT Specialist & Software Developer.
+Personal site for **James Peter Ugochukwu**.
 
-## Live Site
+## URLs
 
-Once GitHub Pages is enabled, the site will be available at:
+| Page | URL |
+|---|---|
+| **Home** | https://jupopie.space/ |
+| **Resume / CV** | https://jupopie.space/resume |
 
-**https://raiderpet.github.io/jupopie/**
+## Structure
 
-## About
-
-IT Specialist and Computer Science professional with experience in software development, IT support, systems administration, and remote technical operations.
+```
+index.html        → Landing page (jupopie.space)
+resume/index.html → Full resume & portfolio
+CNAME             → Custom domain (jupopie.space)
+```
 
 ## Connect
 
@@ -18,9 +23,8 @@ IT Specialist and Computer Science professional with experience in software deve
 - **LinkedIn:** [peter-james](https://www.linkedin.com/in/peter-james-957910197)
 - **GitHub:** [raiderpet](https://github.com/raiderpet)
 
-## Enable GitHub Pages
+## GitHub Pages
 
 1. Go to **Settings → Pages** in this repo
-2. Under **Source**, select **Deploy from a branch**
-3. Choose branch **main** and folder **/ (root)**
-4. Save — your site will be live in a few minutes
+2. Source: **Deploy from a branch** → **main** → **/ (root)**
+3. Custom domain: **jupopie.space** (DNS should point to GitHub Pages)

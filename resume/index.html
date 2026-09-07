@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="James Peter Ugochukwu — IT Specialist, Software Developer, and Systems & Technical Support professional based in Nigeria.">
-  <title>James Peter Ugochukwu | IT Specialist & Software Developer</title>
+  <title>James Peter Ugochukwu | Software Developer & Security Systems Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -465,6 +465,89 @@
       flex-shrink: 0;
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+    }
+
+    .skill-card h3 {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin: 0 0 0.65rem;
+    }
+
+    .skill-card ul {
+      margin: 0;
+      padding-left: 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .skill-card li { margin-bottom: 0.3rem; }
+
+    .achievement-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .achievement-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.65rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .achievement-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 90;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1.2rem;
+      background: var(--accent);
+      color: #0b0f14;
+      border: none;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .print-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      .nav, .print-btn, .footer-theme, .hero-actions, .hero-badge { display: none !important; }
+      body { background: #fff; color: #111; }
+      section { break-inside: avoid; }
+      .hero { padding-top: 1rem; }
+    }
+
     /* Contact / Footer */
     .contact-section { text-align: center; padding-bottom: 4rem; }
 
@@ -540,6 +623,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -556,10 +640,11 @@
   <header class="hero container">
     <span class="hero-badge">Open to Opportunities</span>
     <h1>James Peter Ugochukwu</h1>
-    <p class="tagline">IT Specialist &nbsp;·&nbsp; Software Developer &nbsp;·&nbsp; Systems & Technical Support</p>
+    <p class="tagline">Software Developer &nbsp;·&nbsp; Security Systems Specialist &nbsp;·&nbsp; IT Specialist &nbsp;·&nbsp; Graphics Designer</p>
     <div class="hero-meta">
       <span>📍 Nigeria</span>
       <span>✉ peterugochukwujames@gmail.com</span>
+      <span>📞 +234 812 238 5972</span>
     </div>
     <div class="hero-actions">
       <a class="btn btn-primary" href="mailto:peterugochukwujames@gmail.com">Get in Touch</a>
@@ -573,10 +658,10 @@
       <p class="section-label">About</p>
       <h2>Professional Summary</h2>
       <p>
-        IT Specialist and Computer Science professional with hands-on experience in software development, IT support, systems administration, technical operations, and digital solutions. Experience includes supporting technology operations at 6 Division, Nigerian Army, Port Harcourt — working with 46 EB and the 6 Division Education Service — as well as contributing to remote technology projects for Alibaba and En Cuzzie Integrated.
+        Dynamic and results-driven Computer Science graduate with a strong foundation in biometric security systems, software development, IT support, and systems administration. Proven ability to work collaboratively in team settings, manage resources effectively, and deliver technology solutions in structured and remote environments.
       </p>
       <p>
-        Skilled in software applications, databases, APIs, web technologies, and technology-driven solutions, with strong problem-solving, communication, and teamwork abilities.
+        Experience includes supporting technology operations at 6 Division, Nigerian Army, Port Harcourt — working with 46 Engineer Brigade and the 6 Division Education Service — as well as remote projects for Alibaba and En Cuzzie Integrated. Seeking to leverage technical skills and project management expertise in a challenging IT role.
       </p>
     </section>
 
@@ -601,45 +686,40 @@
 
     <section id="skills">
       <p class="section-label">Stack</p>
-      <h2>Technical Skills</h2>
-      <div class="skill-group">
-        <h3>Programming</h3>
-        <div class="tags">
-          <span class="tag">PHP</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Python</span>
-          <span class="tag">VB.NET</span>
-          <span class="tag">Elixir / Erlang</span>
+      <h2>Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Software Development</h3>
+          <ul>
+            <li>Biometric Authentication</li>
+            <li>Secure Communication Systems</li>
+            <li>Cryptography Implementation</li>
+            <li>Access Control Systems</li>
+            <li>Security Software Integration</li>
+            <li>Web Application Development</li>
+          </ul>
         </div>
-      </div>
-      <div class="skill-group">
-        <h3>Frontend</h3>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">Vue.js</span>
-          <span class="tag">Tailwind CSS</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
+        <div class="skill-card">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>PHP · JavaScript · TypeScript · Python</li>
+            <li>Java Development · VB.NET</li>
+            <li>React · Vue.js · Tailwind CSS</li>
+            <li>MySQL · PostgreSQL · Redis</li>
+            <li>Network Security · REST APIs</li>
+            <li>System Architecture · Deployment</li>
+          </ul>
         </div>
-      </div>
-      <div class="skill-group">
-        <h3>Backend & Databases</h3>
-        <div class="tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Redis</span>
-          <span class="tag">REST APIs</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Systems & Infrastructure</h3>
-        <div class="tags">
-          <span class="tag">Windows Applications</span>
-          <span class="tag">Server Administration</span>
-          <span class="tag">Application Deployment</span>
-          <span class="tag">Database Systems</span>
-          <span class="tag">API Integration</span>
+        <div class="skill-card">
+          <h3>Professional Competencies</h3>
+          <ul>
+            <li>Technical Team Leadership</li>
+            <li>Security Protocol Implementation</li>
+            <li>Project Management</li>
+            <li>Documentation & Training</li>
+            <li>IT Support & Troubleshooting</li>
+            <li>Cross-functional Collaboration</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -664,22 +744,22 @@
         </li>
         <li class="timeline-item">
           <div class="timeline-header">
-            <h3>6 Division, Nigerian Army — Port Harcourt</h3>
+            <h3>46 Engineer Brigade — 6 Division, Nigerian Army</h3>
+            <span class="timeline-date">2023 – Present</span>
           </div>
-          <div class="timeline-role">NYSC IT Specialist / IT Support — 46 EB</div>
+          <div class="timeline-role">Software Developer / NYSC IT Specialist</div>
           <ul>
-            <li>Provided IT support and technical assistance within the unit.</li>
-            <li>Assisted with deployment, maintenance, and troubleshooting of computer systems and IT equipment.</li>
-            <li>Supported users with software, hardware, and general technical issues.</li>
-            <li>Assisted with data and information management activities.</li>
-            <li>Worked in a structured military environment requiring professionalism, confidentiality, and attention to detail.</li>
+            <li>Design and implement military-grade security systems with a focus on biometric authentication and access control.</li>
+            <li>Implement and maintain cybersecurity measures adhering to military security standards.</li>
+            <li>Develop documentation and training sessions for military personnel on new software systems.</li>
+            <li>Provided IT support, deployment, and troubleshooting of computer systems and IT equipment.</li>
+            <li>Supported users with software, hardware, and data management activities.</li>
           </ul>
           <div class="timeline-role" style="margin-top: 1rem;">6 Division Education Service — IT Support</div>
           <ul>
             <li>Provided technical and IT support for staff and operational activities.</li>
             <li>Assisted with computer systems, software, and technical troubleshooting.</li>
-            <li>Supported users in resolving day-to-day technology-related issues.</li>
-            <li>Assisted with management and use of digital systems and computer resources.</li>
+            <li>Supported management and use of digital systems and computer resources.</li>
           </ul>
         </li>
         <li class="timeline-item">
@@ -700,12 +780,12 @@
             <h3>Emmabross Integrated Services</h3>
             <span class="timeline-date">2015 – 2017</span>
           </div>
-          <div class="timeline-role">IT / Technical Support</div>
+          <div class="timeline-role">IT Assistant / Technical Support</div>
           <ul>
-            <li>Provided general technical and IT-related support.</li>
-            <li>Assisted with computer systems and technology-related tasks.</li>
-            <li>Supported users with technical issues and troubleshooting.</li>
-            <li>Developed practical experience working with people, technology, and day-to-day business operations.</li>
+            <li>Assisted in the development and implementation of IT solutions, improving system efficiency by 25%.</li>
+            <li>Collaborated with cross-functional teams to enhance service delivery and client satisfaction.</li>
+            <li>Managed IT inventory, ensuring optimal resource allocation and reducing downtime by 30%.</li>
+            <li>Supported users with technical issues and day-to-day business operations.</li>
           </ul>
         </li>
       </ul>
@@ -754,10 +834,29 @@
       </div>
     </section>
 
+    <section id="achievements">
+      <p class="section-label">Highlights</p>
+      <h2>Key Projects & Achievements</h2>
+      <ul class="achievement-list">
+        <li>Developed a biometric security project that enhanced border security at the Federal Polytechnic Bida.</li>
+        <li>Built and launched <a href="https://mediaone.ng" target="_blank" rel="noopener">MediaOne.ng</a> — a Nigerian news and media platform for headlines, trending stories, and live coverage.</li>
+        <li>Successfully managed a team of 5 in a high-pressure environment, improving project delivery time by 15%.</li>
+        <li>Implemented a resource management system that reduced material waste by 10%.</li>
+        <li>Conducted workshops on information dissemination techniques, increasing team efficiency by 20%.</li>
+      </ul>
+    </section>
+
     <section id="education">
       <p class="section-label">Background</p>
-      <h2>Education</h2>
+      <h2>Education & Service</h2>
       <ul class="edu-list">
+        <li class="edu-item">
+          <div>
+            <strong>National Youth Service Corps (NYSC)</strong><br>
+            <span>46 Engineer Brigade, Nigerian Army — Port Harcourt</span>
+          </div>
+          <span class="edu-year">2023 – 2024</span>
+        </li>
         <li class="edu-item">
           <div>
             <strong>The Federal Polytechnic, Bida</strong><br>
@@ -781,10 +880,24 @@
       <ul class="edu-list">
         <li class="edu-item">
           <div>
-            <strong>National Youth Service Corps (NYSC)</strong><br>
-            <span>Certificate of National Service — IT Specialist / IT Support</span>
+            <strong>Certified Information Systems Security Professional (CISSP)</strong><br>
+            <span>ISC2</span>
           </div>
-          <span class="edu-year">6 Division, Port Harcourt</span>
+          <span class="edu-year">2023</span>
+        </li>
+        <li class="edu-item">
+          <div>
+            <strong>Project Management Professional (PMP)</strong><br>
+            <span>Project Management Institute (PMI)</span>
+          </div>
+          <span class="edu-year">2022</span>
+        </li>
+        <li class="edu-item">
+          <div>
+            <strong>National Youth Service Corps (NYSC)</strong><br>
+            <span>Certificate of National Service — 46 Engineer Brigade</span>
+          </div>
+          <span class="edu-year">2023 – 2024</span>
         </li>
         <li class="edu-item">
           <div>
@@ -801,6 +914,35 @@
           <span class="edu-year">2008</span>
         </li>
       </ul>
+    </section>
+
+    <section id="languages">
+      <p class="section-label">More</p>
+      <h2>Languages & Additional Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <ul>
+            <li>English (Fluent)</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Military Software Tools</h3>
+          <ul>
+            <li>Security Analysis Tools</li>
+            <li>Network Monitoring Systems</li>
+            <li>Encryption Software</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Additional</h3>
+          <ul>
+            <li>Graphics Design</li>
+            <li>System Documentation</li>
+            <li>Remote Technical Operations</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="strengths">
@@ -822,11 +964,14 @@
       <p>Open to remote and on-site opportunities in software development, IT support, and technical operations.</p>
       <div class="contact-links">
         <a href="mailto:peterugochukwujames@gmail.com">✉ Email</a>
+        <a href="tel:+2348122385972">📞 Phone</a>
         <a href="https://www.linkedin.com/in/peter-james-957910197" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/raiderpet" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
+
+  <button type="button" class="print-btn" onclick="window.print()" aria-label="Print resume">🖨 Print Resume</button>
 
   <footer>
     <div class="footer-theme">

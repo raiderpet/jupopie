@@ -96,22 +96,62 @@
 
     .nav-links a:hover { color: var(--accent); }
 
-    .theme-toggle {
+    .theme-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      color: var(--text);
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      border-radius: 999px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
+      font-family: inherit;
       transition: border-color 0.2s;
     }
 
-    .theme-toggle:hover { border-color: var(--accent); }
+    .theme-switch:hover { border-color: var(--accent); }
+
+    .theme-switch-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.65rem;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .theme-switch-option.active {
+      background: var(--accent);
+      color: #0b0f14;
+    }
+
+    [data-theme="light"] .theme-switch-option.active {
+      color: #ffffff;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .project-link:hover { color: var(--accent-hover); }
 
     .nav-toggle {
       display: none;
@@ -454,10 +494,16 @@
 
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.5rem 1.5rem 2rem;
       color: var(--text-muted);
       font-size: 0.8rem;
       border-top: 1px solid var(--border);
+    }
+
+    .footer-theme {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
 
     @media (max-width: 720px) {
@@ -494,7 +540,10 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <div class="theme-switch" role="group" aria-label="Choose color theme">
+        <button type="button" class="theme-switch-option" id="themeLight" aria-pressed="false">☀ Light</button>
+        <button type="button" class="theme-switch-option" id="themeDark" aria-pressed="true">☾ Dark</button>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
     </div>
   </nav>
@@ -662,6 +711,29 @@
       <h2>Selected Projects</h2>
       <div class="projects-grid">
         <article class="project-card">
+          <div class="project-meta">Live Product · News & Media Platform</div>
+          <h3><a href="https://mediaone.ng" target="_blank" rel="noopener">MediaOne.ng</a></h3>
+          <p>A Nigerian news and media platform — one place for headlines, trending stories, local and international coverage, sports, politics, and live currency rates. Built for fast content delivery and a modern reading experience.</p>
+          <div class="project-links">
+            <a class="project-link" href="https://mediaone.ng" target="_blank" rel="noopener">Visit mediaone.ng →</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-meta">Web Application · Finance</div>
+          <h3>Smart Expense Tracker</h3>
+          <p>A web app to help users manage and visualize their expenses with analytics, budgeting tools, and spending insights — making personal finance easier to track and understand.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-meta">Web Application · AI Tools</div>
+          <h3>AI-Powered Resume Builder</h3>
+          <p>An intelligent tool that helps users craft professional resumes using AI suggestions, structured templates, and role-specific guidance for job applications.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-meta">Web Application · Real-Time Messaging</div>
+          <h3>Real-Time Chat Application</h3>
+          <p>A secure, scalable chat platform for instant messaging and file sharing — designed for reliable communication with a clean, responsive interface.</p>
+        </article>
+        <article class="project-card">
           <div class="project-meta">Academic Project · Federal Polytechnic Bida</div>
           <h3>Border Security Using Bi-Modal Biometric Techniques</h3>
           <p>Project focused on the application of bi-modal biometric technology for border security and identity verification — combining multiple biometric modalities to improve accuracy and reliability in identity management systems.</p>
@@ -669,7 +741,10 @@
         <article class="project-card">
           <div class="project-meta">Personal · Open Source</div>
           <h3><a href="https://github.com/raiderpet/jupopie" target="_blank" rel="noopener">Portfolio Website</a></h3>
-          <p>This site — a modern, responsive showcase of my professional experience, skills, and projects, hosted on GitHub Pages.</p>
+          <p>This site — a modern, responsive showcase of my professional experience, skills, and projects, hosted on GitHub Pages with dark and light mode support.</p>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/raiderpet/jupopie" target="_blank" rel="noopener">View on GitHub →</a>
+          </div>
         </article>
       </div>
     </section>
@@ -728,25 +803,40 @@
   </main>
 
   <footer>
+    <div class="footer-theme">
+      <div class="theme-switch" role="group" aria-label="Choose color theme">
+        <button type="button" class="theme-switch-option" id="footerThemeLight" aria-pressed="false">☀ Light</button>
+        <button type="button" class="theme-switch-option" id="footerThemeDark" aria-pressed="true">☾ Dark</button>
+      </div>
+    </div>
     <p>&copy; 2026 James Peter Ugochukwu · Nigeria</p>
   </footer>
 
   <script>
-    const themeToggle = document.getElementById('themeToggle');
+    const themeLightBtns = [document.getElementById('themeLight'), document.getElementById('footerThemeLight')];
+    const themeDarkBtns = [document.getElementById('themeDark'), document.getElementById('footerThemeDark')];
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     const html = document.documentElement;
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'dark' ? '☀' : '☾';
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      const isDark = theme === 'dark';
+      themeLightBtns.forEach(btn => {
+        btn.classList.toggle('active', !isDark);
+        btn.setAttribute('aria-pressed', String(!isDark));
+      });
+      themeDarkBtns.forEach(btn => {
+        btn.classList.toggle('active', isDark);
+        btn.setAttribute('aria-pressed', String(isDark));
+      });
+    }
 
-    themeToggle.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      themeToggle.textContent = next === 'dark' ? '☀' : '☾';
-    });
+    setTheme(localStorage.getItem('theme') || 'dark');
+
+    themeLightBtns.forEach(btn => btn.addEventListener('click', () => setTheme('light')));
+    themeDarkBtns.forEach(btn => btn.addEventListener('click', () => setTheme('dark')));
 
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 

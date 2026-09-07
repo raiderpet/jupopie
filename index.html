@@ -3,122 +3,756 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>James, Peter Ugochukwu | Portfolio</title>
+  <meta name="description" content="James Peter Ugochukwu — IT Specialist, Software Developer, and Systems & Technical Support professional based in Nigeria.">
+  <title>James Peter Ugochukwu | IT Specialist & Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-elevated: #111820;
+      --bg-card: #151c26;
+      --border: #1e2a3a;
+      --text: #e8edf4;
+      --text-muted: #8b9cb3;
+      --accent: #2dd4bf;
+      --accent-dim: rgba(45, 212, 191, 0.12);
+      --accent-hover: #5eead4;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      --nav-height: 64px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f4f7fb;
+      --bg-elevated: #ffffff;
+      --bg-card: #ffffff;
+      --border: #dde4ee;
+      --text: #1a2332;
+      --text-muted: #5a6b82;
+      --accent: #0d9488;
+      --accent-dim: rgba(13, 148, 136, 0.1);
+      --accent-hover: #0f766e;
+      --shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 1rem);
+    }
+
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       margin: 0;
-      background: #f4f6f8;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 0.25s, color 0.25s;
     }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 2rem 0 1rem 0;
-      text-align: center;
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
     }
-    header p {
-      margin: 0.5rem 0 0 0;
-      font-size: 1.2rem;
-      color: #b0b0b0;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #1a73e8;
-      margin-bottom: 0.5rem;
-    }
-    ul {
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
       list-style: none;
+      margin: 0;
       padding: 0;
     }
-    li {
-      margin-bottom: 1rem;
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    .project-title {
-      font-weight: bold;
-      color: #222;
-      text-decoration: none;
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      cursor: pointer;
       font-size: 1.1rem;
     }
-    .project-title:hover {
-      color: #1a73e8;
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
-    .contact-links a {
-      color: #1a73e8;
-      text-decoration: none;
-      margin-right: 1.5rem;
+
+    /* Hero */
+    .hero {
+      padding: calc(var(--nav-height) + 4rem) 0 3rem;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
       font-weight: 500;
     }
-    .contact-links a:hover {
-      text-decoration: underline;
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
     }
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem;
+
+    .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0f14;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #0b0f14;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    section p {
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .skill-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-group h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 0.6rem;
+    }
+
+    /* Timeline */
+    .timeline { list-style: none; padding: 0; margin: 0; }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.5rem;
+      padding-bottom: 2rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .timeline-role {
+      font-size: 0.875rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .timeline-item li { margin-bottom: 0.35rem; }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+
+    .project-card h3 a { color: var(--text); }
+    .project-card h3 a:hover { color: var(--accent); }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Education */
+    .edu-list { list-style: none; padding: 0; margin: 0; }
+
+    .edu-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .edu-item:last-child { border-bottom: none; }
+
+    .edu-item strong { font-size: 0.95rem; }
+    .edu-item span { color: var(--text-muted); font-size: 0.875rem; }
+    .edu-year { color: var(--accent); font-size: 0.8rem; font-weight: 600; }
+
+    /* Strengths */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .strength-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .strength-item::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Contact / Footer */
+    .contact-section { text-align: center; padding-bottom: 4rem; }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .contact-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-elevated);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
       }
-      header h1 {
-        font-size: 2rem;
-      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+      .nav-actions { display: flex; gap: 0.5rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>James, Peter Ugochukwu</h1>
-    <p>Software Developer | Problem Solver | Lifelong Learner</p>
+  <nav class="nav">
+    <span class="nav-brand">JPU</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <span class="hero-badge">Open to Opportunities</span>
+    <h1>James Peter Ugochukwu</h1>
+    <p class="tagline">IT Specialist &nbsp;·&nbsp; Software Developer &nbsp;·&nbsp; Systems & Technical Support</p>
+    <div class="hero-meta">
+      <span>📍 Nigeria</span>
+      <span>✉ peterugochukwujames@gmail.com</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:peterugochukwujames@gmail.com">Get in Touch</a>
+      <a class="btn btn-outline" href="https://github.com/raiderpet" target="_blank" rel="noopener">View GitHub</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/peter-james-957910197" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
+
+  <main class="container">
+    <section id="about">
+      <p class="section-label">About</p>
+      <h2>Professional Summary</h2>
       <p>
-        I am a passionate and versatile software developer with a keen interest in building impactful digital solutions. With a strong foundation in modern web technologies and a drive for continuous learning, I enjoy tackling complex challenges and collaborating with others to create innovative products. My approach combines technical expertise with creativity, always striving to deliver clean, efficient, and user-friendly applications. I am open to new opportunities and love connecting with like-minded professionals.
+        IT Specialist and Computer Science professional with hands-on experience in software development, IT support, systems administration, technical operations, and digital solutions. Experience includes supporting technology operations at 6 Division, Nigerian Army, Port Harcourt — working with 46 EB and the 6 Division Education Service — as well as contributing to remote technology projects for Alibaba and En Cuzzie Integrated.
+      </p>
+      <p>
+        Skilled in software applications, databases, APIs, web technologies, and technology-driven solutions, with strong problem-solving, communication, and teamwork abilities.
       </p>
     </section>
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <a class="project-title" href="#" target="_blank">Smart Expense Tracker</a>
-          <div>A web app to help users manage and visualize their expenses with analytics and budgeting tools.</div>
+
+    <section id="competencies">
+      <p class="section-label">Expertise</p>
+      <h2>Core Competencies</h2>
+      <div class="tags">
+        <span class="tag">Software Development</span>
+        <span class="tag">IT Support & Troubleshooting</span>
+        <span class="tag">Systems Administration</span>
+        <span class="tag">Web Application Development</span>
+        <span class="tag">Database Management</span>
+        <span class="tag">API Development & Integration</span>
+        <span class="tag">Technical Support & Deployment</span>
+        <span class="tag">Data Management</span>
+        <span class="tag">System Documentation</span>
+        <span class="tag">Remote Technical Operations</span>
+        <span class="tag">Problem Solving</span>
+        <span class="tag">Team Collaboration</span>
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="section-label">Stack</p>
+      <h2>Technical Skills</h2>
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <div class="tags">
+          <span class="tag">PHP</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">VB.NET</span>
+          <span class="tag">Elixir / Erlang</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Vue.js</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Backend & Databases</h3>
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Systems & Infrastructure</h3>
+        <div class="tags">
+          <span class="tag">Windows Applications</span>
+          <span class="tag">Server Administration</span>
+          <span class="tag">Application Deployment</span>
+          <span class="tag">Database Systems</span>
+          <span class="tag">API Integration</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <p class="section-label">Career</p>
+      <h2>Professional Experience</h2>
+      <ul class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-header">
+            <h3>En Cuzzie Integrated</h3>
+          </div>
+          <div class="timeline-role">Remote IT / Software Developer</div>
+          <ul>
+            <li>Provide remote technical and software development support across assigned projects.</li>
+            <li>Develop, maintain, and improve software applications and digital solutions.</li>
+            <li>Work with databases, APIs, frontend, and backend technologies to deliver functional systems.</li>
+            <li>Troubleshoot application and technical issues and implement appropriate solutions.</li>
+            <li>Collaborate remotely with team members to understand requirements and deliver project objectives.</li>
+            <li>Support deployment, maintenance, and continuous improvement of technology solutions.</li>
+          </ul>
         </li>
-        <li>
-          <a class="project-title" href="#" target="_blank">AI-Powered Resume Builder</a>
-          <div>An intelligent tool that helps users craft professional resumes using AI suggestions and templates.</div>
+        <li class="timeline-item">
+          <div class="timeline-header">
+            <h3>6 Division, Nigerian Army — Port Harcourt</h3>
+          </div>
+          <div class="timeline-role">NYSC IT Specialist / IT Support — 46 EB</div>
+          <ul>
+            <li>Provided IT support and technical assistance within the unit.</li>
+            <li>Assisted with deployment, maintenance, and troubleshooting of computer systems and IT equipment.</li>
+            <li>Supported users with software, hardware, and general technical issues.</li>
+            <li>Assisted with data and information management activities.</li>
+            <li>Worked in a structured military environment requiring professionalism, confidentiality, and attention to detail.</li>
+          </ul>
+          <div class="timeline-role" style="margin-top: 1rem;">6 Division Education Service — IT Support</div>
+          <ul>
+            <li>Provided technical and IT support for staff and operational activities.</li>
+            <li>Assisted with computer systems, software, and technical troubleshooting.</li>
+            <li>Supported users in resolving day-to-day technology-related issues.</li>
+            <li>Assisted with management and use of digital systems and computer resources.</li>
+          </ul>
         </li>
-        <li>
-          <a class="project-title" href="#" target="_blank">Real-Time Chat Application</a>
-          <div>A secure, scalable chat platform for instant messaging and file sharing.</div>
+        <li class="timeline-item">
+          <div class="timeline-header">
+            <h3>Alibaba</h3>
+            <span class="timeline-date">2 Months · Remote</span>
+          </div>
+          <div class="timeline-role">Remote Project — IT / Software Support</div>
+          <ul>
+            <li>Participated in a remote technology project for Alibaba.</li>
+            <li>Supported assigned technical requirements and project deliverables within a remote environment.</li>
+            <li>Collaborated remotely and adapted to project requirements and timelines.</li>
+            <li>Applied software and IT knowledge to assigned project activities.</li>
+          </ul>
         </li>
-        <li>
-          <a class="project-title" href="#" target="_blank">Personal Portfolio Website</a>
-          <div>This website! A showcase of my skills, projects, and professional journey.</div>
+        <li class="timeline-item">
+          <div class="timeline-header">
+            <h3>Emmabross Integrated Services</h3>
+            <span class="timeline-date">2015 – 2017</span>
+          </div>
+          <div class="timeline-role">IT / Technical Support</div>
+          <ul>
+            <li>Provided general technical and IT-related support.</li>
+            <li>Assisted with computer systems and technology-related tasks.</li>
+            <li>Supported users with technical issues and troubleshooting.</li>
+            <li>Developed practical experience working with people, technology, and day-to-day business operations.</li>
+          </ul>
         </li>
-        <!-- Add more projects here as you build them -->
       </ul>
     </section>
-    <section>
-      <h2>Contact</h2>
+
+    <section id="projects">
+      <p class="section-label">Work</p>
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-meta">Academic Project · Federal Polytechnic Bida</div>
+          <h3>Border Security Using Bi-Modal Biometric Techniques</h3>
+          <p>Project focused on the application of bi-modal biometric technology for border security and identity verification — combining multiple biometric modalities to improve accuracy and reliability in identity management systems.</p>
+        </article>
+        <article class="project-card">
+          <div class="project-meta">Personal · Open Source</div>
+          <h3><a href="https://github.com/raiderpet/jupopie" target="_blank" rel="noopener">Portfolio Website</a></h3>
+          <p>This site — a modern, responsive showcase of my professional experience, skills, and projects, hosted on GitHub Pages.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <p class="section-label">Background</p>
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <div>
+            <strong>The Federal Polytechnic, Bida</strong><br>
+            <span>Higher National Diploma (HND), Computer Science</span>
+          </div>
+          <span class="edu-year">2022</span>
+        </li>
+        <li class="edu-item">
+          <div>
+            <strong>The Federal Polytechnic, Bida</strong><br>
+            <span>National Diploma (ND), Computer Science</span>
+          </div>
+          <span class="edu-year">2018</span>
+        </li>
+        <li class="edu-item">
+          <div>
+            <strong>S.T. John's Secondary School, Bida</strong><br>
+            <span>Senior Secondary School Certificate</span>
+          </div>
+          <span class="edu-year">2015</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="strengths">
+      <p class="section-label">Qualities</p>
+      <h2>Professional Strengths</h2>
+      <div class="strengths-grid">
+        <div class="strength-item">Strong analytical and problem-solving ability</div>
+        <div class="strength-item">Works effectively independently and as part of a team</div>
+        <div class="strength-item">Strong communication and information-sharing skills</div>
+        <div class="strength-item">Learns and adapts quickly to new technologies</div>
+        <div class="strength-item">Practical approach to identifying and solving technology problems</div>
+        <div class="strength-item">Effective in structured and remote environments</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <p class="section-label">Connect</p>
+      <h2>Get in Touch</h2>
+      <p>Open to remote and on-site opportunities in software development, IT support, and technical operations.</p>
       <div class="contact-links">
-        <a href="mailto:peterugochukwujames@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/peter-james-957910197?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a>
-        <a href="https://github.com/raiderpet" target="_blank">GitHub</a>
+        <a href="mailto:peterugochukwujames@gmail.com">✉ Email</a>
+        <a href="https://www.linkedin.com/in/peter-james-957910197" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/raiderpet" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2026 James Peter Ugochukwu · Nigeria</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀' : '☾';
+
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeToggle.textContent = next === 'dark' ? '☀' : '☾';
+    });
+
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>

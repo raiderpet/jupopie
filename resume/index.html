@@ -263,7 +263,7 @@
 
     /* Sections */
     section {
-      padding: 3rem 0;
+      padding: 2rem 0;
       border-top: 1px solid var(--border);
     }
 
@@ -397,7 +397,7 @@
       display: flex;
       flex-direction: column;
       height: 100%;
-      min-height: 240px;
+      min-height: 180px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -552,10 +552,31 @@
     }
 
     @media print {
-      .nav, .print-btn, .footer-theme, .hero-actions, .hero-badge { display: none !important; }
-      body { background: #fff; color: #111; }
-      section { break-inside: avoid; }
-      .hero { padding-top: 1rem; }
+      @page { margin: 0.55in; size: letter; }
+      .nav, .print-btn, .footer-theme, .hero-actions, .hero-badge, #contact, footer { display: none !important; }
+      body { background: #fff; color: #111; font-size: 10.5pt; line-height: 1.4; }
+      .container { max-width: 100%; padding: 0; }
+      .hero { padding: 0 0 0.75rem; text-align: left; }
+      .hero h1 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+      .hero .tagline { font-size: 0.85rem; margin-bottom: 0.35rem; }
+      .hero-meta { font-size: 0.8rem; margin-bottom: 0; justify-content: flex-start; gap: 0.75rem; }
+      section { padding: 0.65rem 0; border-color: #ddd; break-inside: avoid-page; }
+      section h2 { font-size: 1rem; margin-bottom: 0.5rem; }
+      .section-label { margin-bottom: 0.15rem; }
+      section p, .timeline-item ul, .skill-card ul, .achievement-list li, .project-card p { font-size: 0.82rem; }
+      .timeline-item { padding-bottom: 0.85rem; }
+      .timeline-item li { margin-bottom: 0.15rem; }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .project-card { min-height: auto; padding: 0.55rem 0.65rem; box-shadow: none; }
+      .project-card h3 { font-size: 0.85rem; }
+      .project-meta { font-size: 0.7rem; margin-bottom: 0.25rem; }
+      .project-links { padding-top: 0.35rem; }
+      .skills-grid { gap: 0.5rem; }
+      .skill-card { padding: 0.55rem 0.65rem; }
+      .skill-card h3 { font-size: 0.8rem; margin-bottom: 0.35rem; }
+      .edu-item { padding: 0.4rem 0; }
+      .tags { gap: 0.25rem; }
+      .tag { font-size: 0.7rem; padding: 0.2rem 0.45rem; }
     }
 
     /* Contact / Footer */
@@ -643,7 +664,6 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -678,30 +698,8 @@
       <p class="section-label">About</p>
       <h2>Professional Summary</h2>
       <p>
-        Dynamic and results-driven Computer Science graduate with a strong foundation in biometric security systems, software development, IT support, and systems administration. Proven ability to work collaboratively in team settings, manage resources effectively, and deliver technology solutions in structured and remote environments.
+        Dynamic Computer Science graduate with expertise in biometric security, software development, IT support, and systems administration. Experienced at 46 Engineer Brigade (Nigerian Army), En Cuzzie Integrated, and Alibaba remote projects. CISSP and PMP certified.
       </p>
-      <p>
-        Experience includes supporting technology operations at 6 Division, Nigerian Army, Port Harcourt, working with 46 Engineer Brigade and the 6 Division Education Service, as well as remote projects for Alibaba and En Cuzzie Integrated. Seeking to leverage technical skills and project management expertise in a challenging IT role.
-      </p>
-    </section>
-
-    <section id="competencies">
-      <p class="section-label">Expertise</p>
-      <h2>Core Competencies</h2>
-      <div class="tags">
-        <span class="tag">Software Development</span>
-        <span class="tag">IT Support & Troubleshooting</span>
-        <span class="tag">Systems Administration</span>
-        <span class="tag">Web Application Development</span>
-        <span class="tag">Database Management</span>
-        <span class="tag">API Development & Integration</span>
-        <span class="tag">Technical Support & Deployment</span>
-        <span class="tag">Data Management</span>
-        <span class="tag">System Documentation</span>
-        <span class="tag">Remote Technical Operations</span>
-        <span class="tag">Problem Solving</span>
-        <span class="tag">Team Collaboration</span>
-      </div>
     </section>
 
     <section id="skills">
@@ -711,34 +709,17 @@
         <div class="skill-card">
           <h3>Software Development</h3>
           <ul>
-            <li>Biometric Authentication</li>
-            <li>Secure Communication Systems</li>
-            <li>Cryptography Implementation</li>
-            <li>Access Control Systems</li>
-            <li>Security Software Integration</li>
-            <li>Web Application Development</li>
+            <li>Biometric Authentication · Access Control · Security Integration</li>
+            <li>PHP · JavaScript · TypeScript · Python · Java · React · Vue.js</li>
+            <li>MySQL · PostgreSQL · REST APIs · Network Security</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3>Technical Skills</h3>
+          <h3>Professional</h3>
           <ul>
-            <li>PHP · JavaScript · TypeScript · Python</li>
-            <li>Java Development · VB.NET</li>
-            <li>React · Vue.js · Tailwind CSS</li>
-            <li>MySQL · PostgreSQL · Redis</li>
-            <li>Network Security · REST APIs</li>
-            <li>System Architecture · Deployment</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Professional Competencies</h3>
-          <ul>
-            <li>Technical Team Leadership</li>
-            <li>Security Protocol Implementation</li>
-            <li>Project Management</li>
-            <li>Documentation & Training</li>
-            <li>IT Support & Troubleshooting</li>
-            <li>Cross-functional Collaboration</li>
+            <li>Project Management · IT Support · Documentation & Training</li>
+            <li>Team Leadership · Remote Operations · Graphics Design</li>
+            <li>English (Fluent)</li>
           </ul>
         </div>
       </div>
@@ -751,35 +732,25 @@
         <li class="timeline-item">
           <div class="timeline-header">
             <h3>En Cuzzie Integrated</h3>
+            <span class="timeline-date">2024 – Present</span>
           </div>
           <div class="timeline-role">Remote IT / Software Developer</div>
           <ul>
-            <li>Provide remote technical and software development support across assigned projects.</li>
-            <li>Develop, maintain, and improve software applications and digital solutions.</li>
-            <li>Work with databases, APIs, frontend, and backend technologies to deliver functional systems.</li>
-            <li>Troubleshoot application and technical issues and implement appropriate solutions.</li>
-            <li>Collaborate remotely with team members to understand requirements and deliver project objectives.</li>
-            <li>Support deployment, maintenance, and continuous improvement of technology solutions.</li>
+            <li>Develop and maintain software applications, APIs, and database-driven solutions.</li>
+            <li>Troubleshoot technical issues and support deployment of digital products.</li>
+            <li>Collaborate remotely to deliver project requirements on schedule.</li>
           </ul>
         </li>
         <li class="timeline-item">
           <div class="timeline-header">
             <h3>46 Engineer Brigade, 6 Division, Nigerian Army</h3>
-            <span class="timeline-date">2023 – Present</span>
+            <span class="timeline-date">2023 – 2024</span>
           </div>
           <div class="timeline-role">Software Developer / NYSC IT Specialist</div>
           <ul>
-            <li>Design and implement military-grade security systems with a focus on biometric authentication and access control.</li>
-            <li>Implement and maintain cybersecurity measures adhering to military security standards.</li>
-            <li>Develop documentation and training sessions for military personnel on new software systems.</li>
-            <li>Provided IT support, deployment, and troubleshooting of computer systems and IT equipment.</li>
-            <li>Supported users with software, hardware, and data management activities.</li>
-          </ul>
-          <div class="timeline-role" style="margin-top: 1rem;">6 Division Education Service, IT Support</div>
-          <ul>
-            <li>Provided technical and IT support for staff and operational activities.</li>
-            <li>Assisted with computer systems, software, and technical troubleshooting.</li>
-            <li>Supported management and use of digital systems and computer resources.</li>
+            <li>Designed security systems focused on biometric authentication and access control.</li>
+            <li>Maintained cybersecurity measures and IT support for military personnel.</li>
+            <li>Supported 6 Division Education Service with systems troubleshooting and user support.</li>
           </ul>
         </li>
         <li class="timeline-item">
@@ -789,10 +760,8 @@
           </div>
           <div class="timeline-role">Remote Project, IT / Software Support</div>
           <ul>
-            <li>Participated in a remote technology project for Alibaba.</li>
-            <li>Supported assigned technical requirements and project deliverables within a remote environment.</li>
-            <li>Collaborated remotely and adapted to project requirements and timelines.</li>
-            <li>Applied software and IT knowledge to assigned project activities.</li>
+            <li>Supported remote technical deliverables and project requirements.</li>
+            <li>Applied software and IT knowledge within assigned timelines.</li>
           </ul>
         </li>
         <li class="timeline-item">
@@ -802,10 +771,9 @@
           </div>
           <div class="timeline-role">IT Assistant / Technical Support</div>
           <ul>
-            <li>Assisted in the development and implementation of IT solutions, improving system efficiency by 25%.</li>
-            <li>Collaborated with cross-functional teams to enhance service delivery and client satisfaction.</li>
-            <li>Managed IT inventory, ensuring optimal resource allocation and reducing downtime by 30%.</li>
-            <li>Supported users with technical issues and day-to-day business operations.</li>
+            <li>Assisted IT solution delivery, improving system efficiency by 25%.</li>
+            <li>Managed IT inventory and reduced downtime by 30%.</li>
+            <li>Supported users with technical issues and daily operations.</li>
           </ul>
         </li>
       </ul>
@@ -818,61 +786,33 @@
         <article class="project-card">
           <div class="project-meta">Live Product · News & Media Platform</div>
           <h3><a href="https://mediaone.ng" target="_blank" rel="noopener">MediaOne.ng</a></h3>
-          <p>A Nigerian news and media platform and one place for headlines, trending stories, local and international coverage, sports, politics, and live currency rates. Built for fast content delivery and a modern reading experience.</p>
+          <p>Nigerian news and media platform for headlines, trending stories, sports, politics, and live coverage.</p>
           <div class="project-links">
             <a class="project-link" href="https://mediaone.ng" target="_blank" rel="noopener">Visit mediaone.ng →</a>
           </div>
         </article>
         <article class="project-card">
           <div class="project-meta">Live Product · SaaS Platform</div>
-          <h3><a href="https://thin.wz" target="_blank" rel="noopener">thin.wz</a></h3>
-          <p>A multi-service SaaS platform with URL shortening, invoicing, subscriptions, and digital business tools built for modern teams and creators.</p>
+          <h3><a href="https://thin.ws" target="_blank" rel="noopener">thin.ws</a></h3>
+          <p>SaaS platform for URL shortening, invoicing, subscriptions, and digital business tools.</p>
           <div class="project-links">
-            <a class="project-link" href="https://thin.wz" target="_blank" rel="noopener">Visit thin.wz →</a>
+            <a class="project-link" href="https://thin.ws" target="_blank" rel="noopener">Visit thin.ws →</a>
           </div>
         </article>
         <article class="project-card">
-          <div class="project-meta">Web Application · Finance</div>
-          <h3>Smart Expense Tracker</h3>
-          <p>A web app to help users manage and visualize their expenses with analytics, budgeting tools, and spending insights, making personal finance easier to track and understand.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-meta">Web Application · AI Tools</div>
-          <h3>AI-Powered Resume Builder</h3>
-          <p>An intelligent tool that helps users craft professional resumes using AI suggestions, structured templates, and role-specific guidance for job applications.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-meta">Web Application · Real-Time Messaging</div>
-          <h3>Real-Time Chat Application</h3>
-          <p>A secure, scalable chat platform for instant messaging and file sharing, designed for reliable communication with a clean, responsive interface.</p>
-        </article>
-        <article class="project-card">
-          <div class="project-meta">Academic Project · Federal Polytechnic Bida</div>
-          <h3>Border Security Using Bi-Modal Biometric Techniques</h3>
-          <p>Project focused on the application of bi-modal biometric technology for border security and identity verification, combining multiple biometric modalities to improve accuracy and reliability in identity management systems.</p>
+          <div class="project-meta">Academic · Federal Polytechnic Bida</div>
+          <h3>Border Security (Bi-Modal Biometrics)</h3>
+          <p>Bi-modal biometric system for border security and identity verification.</p>
         </article>
         <article class="project-card">
           <div class="project-meta">Personal · Open Source</div>
           <h3><a href="/resume">Portfolio & Resume</a></h3>
-          <p>My personal site at jupopie.space, a modern, responsive showcase of professional experience, skills, and projects with dark and light mode support.</p>
+          <p>Personal site at jupopie.space with responsive layout and dark/light mode.</p>
           <div class="project-links">
             <a class="project-link" href="https://github.com/raiderpet/jupopie" target="_blank" rel="noopener">View on GitHub →</a>
           </div>
         </article>
       </div>
-    </section>
-
-    <section id="achievements">
-      <p class="section-label">Highlights</p>
-      <h2>Key Projects & Achievements</h2>
-      <ul class="achievement-list">
-        <li>Developed a biometric security project that enhanced border security at the Federal Polytechnic Bida.</li>
-        <li>Built and launched <a href="https://mediaone.ng" target="_blank" rel="noopener">MediaOne.ng</a>, a Nigerian news and media platform for headlines, trending stories, and live coverage.</li>
-        <li>Developed <a href="https://thin.wz" target="_blank" rel="noopener">thin.wz</a>, a SaaS platform for URL shortening, invoicing, and subscription services.</li>
-        <li>Successfully managed a team of 5 in a high-pressure environment, improving project delivery time by 15%.</li>
-        <li>Implemented a resource management system that reduced material waste by 10%.</li>
-        <li>Conducted workshops on information dissemination techniques, increasing team efficiency by 20%.</li>
-      </ul>
     </section>
 
     <section id="education">
@@ -936,48 +876,6 @@
           <span class="edu-year">2022</span>
         </li>
       </ul>
-    </section>
-
-    <section id="languages">
-      <p class="section-label">More</p>
-      <h2>Languages & Additional Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Languages</h3>
-          <ul>
-            <li>English (Fluent)</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Military Software Tools</h3>
-          <ul>
-            <li>Security Analysis Tools</li>
-            <li>Network Monitoring Systems</li>
-            <li>Encryption Software</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Additional</h3>
-          <ul>
-            <li>Graphics Design</li>
-            <li>System Documentation</li>
-            <li>Remote Technical Operations</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="strengths">
-      <p class="section-label">Qualities</p>
-      <h2>Professional Strengths</h2>
-      <div class="strengths-grid">
-        <div class="strength-item">Strong analytical and problem-solving ability</div>
-        <div class="strength-item">Works effectively independently and as part of a team</div>
-        <div class="strength-item">Strong communication and information-sharing skills</div>
-        <div class="strength-item">Learns and adapts quickly to new technologies</div>
-        <div class="strength-item">Practical approach to identifying and solving technology problems</div>
-        <div class="strength-item">Effective in structured and remote environments</div>
-      </div>
     </section>
 
     <section id="contact" class="contact-section">
